@@ -22,6 +22,5 @@
 注意两点：
 1. 执行完Arch04.sh后，可能要运行`source /etc/profile`
 2. 执行完Arch06.sh后，可能要运行`grub-mkconfig -o /boot/grub/grub.cfg`
-```
 
 
