@@ -33,11 +33,11 @@ else
   pacman -Syu --needed --noconfirm git base-devel
   # 构建并安装 yay（以普通用户身份）
   echo "[INFO] 正在以用户 $REGULAR_USER 身份构建 yay..."
-  BUILD_DIR="/tmp/yay-build-$" # 使用唯一的临时目录
+  BUILD_DIR="/tmp/yay-build" # 使用唯一的临时目录
   run_as_user "
     mkdir -p '$BUILD_DIR' && cd '$BUILD_DIR'
     git clone --depth=1 https://aur.archlinux.org/yay.git .
-    makepkg -si --noconfirm
+    makepkg -si
   "
   # 清理构建目录（以 root 身份，因为如果 makepkg 早期失败，它可能包含 root 拥有的文件）
   rm -rf "$BUILD_DIR"
